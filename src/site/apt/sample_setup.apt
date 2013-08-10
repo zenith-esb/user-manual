@@ -1,0 +1,25 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+Setting up Client and Server application to Test Samples
+
+	At the moment we are using the sample client and server application used by Apache Synapse to test our ESB. Please
+refer to {{{http://synapse.apache.org/userguide/quick_start.html}Apache Synapse quick start guide}} for more information. To test the sample, please run the Zenith ESB
+instead of Synapse in the guide.
+
+Executing Samples
+
+	Samples can be found in samples directory. To import a sample, change the sample number in the zenith_configuration.js
+file. 
+  
++-----+
+
+var samples = require('../samples/sample_1');
+
++-----+
+

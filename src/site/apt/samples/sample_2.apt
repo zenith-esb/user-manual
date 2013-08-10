@@ -1,0 +1,58 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+Message mediation
+
+	The intention of this sample configuration is to demonstrate simple message proxy scenario. 
+The client application connects with the web service through Zenith ESB using HTTP transport. The ESB extract the 
+SOAP message and pass it to the web service by extracting the SOAP header fields using a supporting
+module
+  
++-----+
+
+var SUPPORT_LIBS = '../lib/support/';
+var logger = require('../lib/logger');
+
+exports.executeSample = function(zenithMessage, callback){
+	//@TODO path name should be extracted from the SOAP header
+	var serviceURL = 'http://localhost:9000/services/SimpleStockQuoteService';
+	logger.debug('SampleConfig', 'EPR: ' + serviceURL);
+
+	var pathName = zenithMessage.transportHeaders.url.pathname;
+
+	var option = {
+			url : serviceURL
+		};
+
+	var endpoint = require(SUPPORT_LIBS + 'ws_endpoint');
+
+	endpoint.callService(zenithMessage, option, function(err,message){		
+			callback(null, message);		
+		});	
+}
+
++-----+
+
+ -----
+ Title Here
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+Maven Site for your project
+
+ Congratulations! If you are looking at this page then you have successfully generated a
+ template site employing the site archetype and you have run:
+  
++-----+
+
+mvn site
+
++-----+

@@ -1,0 +1,24 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+Introducing Our New Event Driven Non-Blocking ESB...
+
+	ESBs are the next generation of EAI.Using NodeJS for developing an ESB gives the ESB event based non blocking nature and high Scalability and lets us choose JavaScript as the configuration language of the ESB.
+ 
+NodeJS As the developing platform
+
+	Node.js is a platform built on Chrome's JavaScript runtime for easily building fast, scalable network applications. Node.js uses an event-driven, non-blocking I/O model that makes it lightweight and efficient, perfect for data-intensive real-time applications that run across distributed devices..
+
+Javascript As the configuration Language	
+
+	Since Node is based on JavaScript, we can have the JavaScript itself as the configuration language of the ESB, which gives a great flexibility than it does with XML based languages.
+	
+It's Open source
+
+	The ESB will be developed as a free and open source project. So anyone can download the source code and Test with your own, can edit the source code and do neccesary changes as you want. Lots of new features will be added and the bugs will be found and eliminated as the FOSS community is getting bigger and bigger.
+

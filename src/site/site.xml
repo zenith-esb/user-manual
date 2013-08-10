@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<project name="Maven" xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
+  
+	<skin>
+        <groupId>org.apache.maven.skins</groupId>
+        <artifactId>maven-default-skin</artifactId>
+        <version>1.0</version>
+    </skin>
+ <body>
+	
+	<!--
+    <links>
+      <item name="Maven" href="http://maven.apache.org/"/>
+    </links>
+	-->
+    <menu name="Main Menu">
+     
+	  <item name="Home" href="index.html"/>
+	  <item name="Download" href="download.html"/>
+	
+    </menu>
+	<menu name="Supporting modules">
+     
+	  <item name="ws_endpoint" href="support/mod_1.html"/>
+	  <item name="xml_processor" href="support/mod_2.html"/>
+	  
+    </menu>
+	<menu name="Samples catalog">
+     
+	  <item name="Sample setup" href="sample_setup.html"/>
+	  <item name="Sample 1: Message mediation" href="samples/sample_1.html"/>
+	  <item name="Sample 2: Proxy Service" href="samples/sample_2.html"/>
+	  
+    </menu>
+	<menu name="Project Team">
+      
+	  <item name="Team" href="team.html"/>
+	  
+    </menu>
+	</body>
+</project>

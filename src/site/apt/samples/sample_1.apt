@@ -1,0 +1,39 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+Message mediation
+
+	The intention of this sample configuration is to demonstrate simple message proxy scenario. 
+The client application connects with the web service through Zenith ESB using HTTP transport. User
+needs to define the endpoint of the service. 
+  
++-----+
+
+var SUPPORT_LIBS = '../lib/support/';
+var logger = require('../lib/logger');
+
+exports.executeSample = function(zenithMessage, callback){
+	
+	var serviceURL = 'http://localhost:9000/services/SimpleStockQuoteService';
+	logger.debug('SampleConfig', 'EPR: ' + serviceURL);
+
+	var pathName = zenithMessage.transportHeaders.url.pathname;
+
+	var option = {
+			url : serviceURL
+		};
+
+	var endpoint = require(SUPPORT_LIBS + 'ws_endpoint');
+
+	endpoint.callService(zenithMessage, option, function(err,message){		
+			callback(null, message);		
+		});	
+}
+
++-----+
+
