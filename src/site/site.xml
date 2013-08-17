@@ -21,10 +21,19 @@
 	  <item name="Download" href="download.html"/>
 	
     </menu>
-	<menu name="Supporting modules">
+
+    <menu name="Configuration">
+     	  <item name="Zenith Configuration" href="config/zenith_config.html"/>
+	  <item name="System Configuration" href="config/sys_config.html"/>
+	  
+	
+    </menu>
+    <menu name="Supporting modules">
      
 	  <item name="ws_endpoint" href="support/mod_1.html"/>
 	  <item name="xml_processor" href="support/mod_2.html"/>
+
+
 	  
     </menu>
 	<menu name="Samples catalog">
