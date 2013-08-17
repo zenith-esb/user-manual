@@ -1,0 +1,30 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+System Configuration
+
+	All the configuration files reside in the directory /configuration. 
+
+Zenith Configuration
+
+	This is used to configure the message flow through the ESB. Details can be found in zenith configuration section
+
+Transport Configuration
+	
+	Current release provides HTTP/s transport facility. The configurations for the transports are in /configuration/server_config.json file. 
+
+Service Configuration
+
+	Names and the WSDL files for SOAP based web services are defined in this configuration file. This can be found in /configuration/service_config.json file.
+
+Log Configuration
+
+	System logging information is in /configuration/log_config.json file. The log level can be changed by altering logLevel field
+
+ 
+
