@@ -1,0 +1,17 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+SOAP Error messages
+
+ This module contains SOAP error messages. User can use these pre defined wrapper to create SOAP error messages.
+  
++-----+
+
++-----+
+
+
