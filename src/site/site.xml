@@ -3,11 +3,15 @@
 <project name="Maven" xmlns="http://maven.apache.org/DECORATION/1.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/DECORATION/1.0.0 http://maven.apache.org/xsd/decoration-1.0.0.xsd">
   
+  
 	<skin>
         <groupId>org.apache.maven.skins</groupId>
         <artifactId>maven-default-skin</artifactId>
         <version>1.0</version>
     </skin>
+	 <bannerLeft>
+    <name>Zenith ESB</name>
+      </bannerLeft>
  <body>
 	
 	<!--
@@ -30,12 +34,25 @@
     </menu>
     <menu name="Supporting modules">
      
-	  <item name="ws_endpoint" href="support/mod_1.html"/>
-	  <item name="xml_processor" href="support/mod_2.html"/>
+	  <item name="Web Service Endpoint" href="support/wsend.html"/>
+	  <item name="Event" href="support/event.html"/>
+	  <!-- Uncollapsed Submenu -->
+      <item name="XML processing" href="support/xml_process.html">
+        <item name="SAX processor module" href="support/xml/sax_processor.html"/>
+        <item name="XSLT module" href="support/xml/xslt_processor.html"/>
+      </item>
+	  <item name="Util" href="support/util.html">
+        <item name="SOAP error messages" href="support/util/soap_err.html"/>
+        <item name="Zenith error message" href="support/util/zenith_err.html"/>
+      </item>
 
-
-	  
+     
     </menu>
+	
+	<menu name="DashBoard">
+     	  <item name="Configuration Panel" href="dashboard/confpanel.html"/>
+    </menu>
+	
 	<menu name="Samples catalog">
      
 	  <item name="Sample setup" href="sample_setup.html"/>
