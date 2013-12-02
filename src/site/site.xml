@@ -23,14 +23,18 @@
      
 	  <item name="Home" href="index.html"/>
 	  <item name="Download" href="download.html"/>
+	  <item name="Install" href="install.html"/>
 	
     </menu>
 
     <menu name="Configuration">
      	  <item name="Zenith Configuration" href="config/zenith_config.html"/>
+		  
 	  <item name="System Configuration" href="config/sys_config.html">
-		<item name="SOAP error messages" href="support/util/soap_err.html"/>
-        <item name="Zenith error message" href="support/util/zenith_err.html"/>
+		<item name="Server Configuration" href="config/server_cfg.html"/>
+        <item name="Event Configuration" href="config/event_cfg.html"/>
+		<item name="Service Configuration" href="config/service_cfg.html"/>
+		<item name="log Configuration" href="config/log_cfg.html"/>		
 	  </item>
 	   	
     </menu>
