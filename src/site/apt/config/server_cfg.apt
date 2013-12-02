@@ -6,36 +6,48 @@
  Date Here
  -----
 
-Zenith Configuration
+Server Configuration
 
-	Zenith ESB uses JavaScript based configuration method instead of XML based configuration mechanism. This provides user more flexibility in creating the message flow process. The configuration is done using /configuration/zenith-configuration.js file.Sample configuration files can be found in /samples directory.
-	The message flow should be created within the mediate function. This method is called by the Zenith sequence generator. 
+	The transports are configured using this configuration file. This can be found in /configuration/server_config.js and can be modified using the
+	GUI. There are to configurations in this file. 
+	
+Transport configuration
+	
+	Transport layer ports and modules are defined in this section. 'transports' is an array of objects defining the types of transports and their port
+	numbers and other essential configuration. The default tranports are 'http' and 'https'. 'module' variable contains the name of the module used for
+	that transport. These modules can be found in /lib/transport folder. If user adds a new transport he should extend the new module from the /lib/transport/transport.json
+	class and the new implementation should be placed in the /lib/transport folder. User needs to add an entry to the 'transports' array with the new module
+	name as the 'module' variable name.
 	
 +-----+
-function mediate(message, callback){	
-	//implementation 
-}
+"transports" : [
+	         {"module" : "http_transport", 
+	          "config" : {"port" : "8280"}
+	         } ,
+	         {"module" : "https_transport", 
+		      "config" : {"port" : "8243",
+		    	  		  "cert" : "resources/security/zenith-cert.pem",
+		    	  		  "key"  : "resources/security/zenith-key.pem"}
+		     }    
+	 ]
 +-----+
 
-	The parameters for the function are zenith message object and the callback function.The user can use pre coded modules to ease up the configuration. These modules are in /lib/support folder. User can import them to the code by importing the module
+AMQP messaging server configuration
 
+	The 'amqp' object defines the AMQP messaging server configuration. Current Zenith version only supports AMQP version 0-9-1 and below. We have tested this using
+{{{http://www.rabbitmq.com/}RabbitMQ}}.  
+	
 +-----+
-var module = require('../lib/support/module');
-+-----+
-
-  
-Zenith Message
-
-	Zenith Message is the object that passes through the ESB. This contains the message body and the transport layer headers. Following are the fields in the Zenith Message object. The source for the Message can be found in /lib/zenith-message.js. The Zenith message object contains following fields.
-
-Callback
-
-	Callbacks are used to send the replies back to the requests. Callbacks are functions used by JavaScript for passing back the return values. It has following structure
-
-+-----+
-callback(error, message)
+ "amqp" : {
+		 "status" : "true",
+		 "server" : { "host": "localhost"
+			 		, "port": "5672"
+			 		, "login": "guest"
+			 		, "password": "guest"
+			 		, "vhost": "/"}		 
+	 }
 +-----+
 
-	First argument is used to pass errors and the second argument is used to send the Zenith message object. 
-
-
+ the 'status' variable defines the status of the AMQP server. To activate the AMQP feature for the Zenith ESB, this should be set to 'true'. At the 
+ statup time the AMQP server needed to be up and running. The 'server' variable contains the information regarding the AMQP server. parameters for 'server' can be found in
+ {{{https://github.com/postwait/node-amqp#connection-options-and-url} node-amqp API document}}. 

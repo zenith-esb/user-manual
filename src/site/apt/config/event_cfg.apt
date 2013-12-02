@@ -9,7 +9,7 @@
 Event Configuration
 
 	This configuration file is used to define the subscribers for the messaging feature using event module (refer event module). User can edit the 
-	configuration file through GUI by accessing http://localhost:3000/eventConfig or modifying /configuration/event_config.js file. following is a 
+	configuration file through GUI by accessing http://localhost:3000/eventConfig or modifying /configuration/event_config.json file. following is a 
 	sample configuration.
 	
 +-----+
