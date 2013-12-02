@@ -6,36 +6,30 @@
  Date Here
  -----
 
-Zenith Configuration
+Event Configuration
 
-	Zenith ESB uses JavaScript based configuration method instead of XML based configuration mechanism. This provides user more flexibility in creating the message flow process. The configuration is done using /configuration/zenith-configuration.js file.Sample configuration files can be found in /samples directory.
-	The message flow should be created within the mediate function. This method is called by the Zenith sequence generator. 
+	This configuration file is used to define the subscribers for the messaging feature using event module (refer event module). User can edit the 
+	configuration file through GUI by accessing http://localhost:3000/eventConfig or modifying /configuration/event_config.js file. following is a 
+	sample configuration.
 	
 +-----+
-function mediate(message, callback){	
-	//implementation 
-}
-+-----+
-
-	The parameters for the function are zenith message object and the callback function.The user can use pre coded modules to ease up the configuration. These modules are in /lib/support folder. User can import them to the code by importing the module
-
-+-----+
-var module = require('../lib/support/module');
-+-----+
-
-  
-Zenith Message
-
-	Zenith Message is the object that passes through the ESB. This contains the message body and the transport layer headers. Following are the fields in the Zenith Message object. The source for the Message can be found in /lib/zenith-message.js. The Zenith message object contains following fields.
-
-Callback
-
-	Callbacks are used to send the replies back to the requests. Callbacks are functions used by JavaScript for passing back the return values. It has following structure
+"eventSubscribers" : [
+	             {"bindingKey" : "station.gampaha" , 	                      
+						"subscribers" : [
+							"http://192.168.105.101:9999/message",
+							"http://192.168.105.102:9999/message"
+	                                     ]         	             	                 				
+	                      },	                      
+		         {"bindingKey" : "#" , 		                       
+						"subscribers" : [		                             
+		                    "http://192.168.105.101:9999/message" 
+			                             ]
+			               }
+				]
 
 +-----+
-callback(error, message)
-+-----+
 
-	First argument is used to pass errors and the second argument is used to send the Zenith message object. 
+	'eventSubscribers' is an array of Objects. Each object in the array has a unique binding key and an array of subscribers for that binding key 
 
 
+ 
