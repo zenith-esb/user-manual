@@ -1,0 +1,36 @@
+ -----
+ Title Here
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+ 
+Install NodeJs on a PC
+
+	The latest version of the NodeJs can be downloaded from the official {{{http://nodejs.org/download/}site}}. On Linux environment, user has to 
+set the environment variables. User can check the installation by typing the following command. This will show the current version of the nodeJs in 
+the system.
+	
++-----+
+node -v
++-----+
+
+Install NodeJs on a Raspberry Pi
+
+	NodeJs can be installed on a Raspbian OS. Type following commands on the terminal. 
+	
++-----+
+node_url="http://nodejs.org/dist/v0.10.21/node-v0.10.21-linux-arm-pi.tar.gz"
+wget "$node_url"
+node_bin="node-v0.10.21-linux-arm-pi.tar.gz"
+sudo tar zxf $node_bin --strip-components=1  -C / 
++-----+
+
+Run Zenith ESB
+
+ User can start the Zenith ESB by executing the following command in the terminal
+ 
++-----+
+node zenith.js
++-----+
