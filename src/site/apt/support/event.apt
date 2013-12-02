@@ -6,13 +6,33 @@
  Date Here
  -----
 
-XML processing module
+Event module
 
- This module can be used to process XML messages.  
+ This module can be used to publish messages to a AMQP messaging server. This module supports AMQP version 0-9-1 and below. We have tested this using
+{{{http://www.rabbitmq.com/}RabbitMQ}}. To use this module, the AMQP server should be up and running. See server configuration for setting up the 
+connection with the AMQP server. 
+ The event module can be imported to the zenith configuration file by
+ 
++-----+
+var event = require('../lib/support/event');
++-----+
 
+ the current version of the Zenith provides publisher/subscriber messaging pattern implementation. The following method can be used 
+ 
++-----+
+event.publish(topic, zenithMessage, callback);
++-----+
+ 
+  The topic is the binding key that can be used to identify the queue. Following code explains the use of the module in the zenith configuration file
   
 +-----+
+function mediate(message, callback){
 
+	var event = require('../lib/support/event');
+	topic = 'station.gampaha';
+	event.publish(topic, zenithMessage, callback);
+}
+exports.mediate = mediate;
 +-----+
 
-
+ The subscribers should be defined in the event configuration file. See event configuration section for more details.

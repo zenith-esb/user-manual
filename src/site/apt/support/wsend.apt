@@ -8,11 +8,47 @@
 
 WS Endpoint Module
 
- This module provides facility to connect to external web services. This can be used to connect to SOAP web services. 
-
+ This module provides facility to connect to external web services. This can be used to connect to SOAP web services as well as RESTful web services. 
+The module can be found under /lib/support folder. This module can be imported to the configuration by
   
 +-----+
-
+var wsEndpoint = require('../lib/support/ws_endpoint');
 +-----+
 
+ To connect to an external web service, the following method can be used.
+ 
++-----+
+wsEndpoint.callService(zenithMessage, option, callback){}	
++-----+ 
 
+ option variable contains the destination information. following is a sample code showing the implementation inside the 
+configuration file
+
++-----+
+function mediate(message, callback){	
+		//custom error messages
+		var soapErrorMsg = require('../lib/util/errormsg/soap_err_msg');
+		var zenithErrorMsg = require('../lib/util/errormsg/zenith_err_msg');
+		
+		var option = {
+				url : 'http://localhost:9000/services/SimpleStockQuoteService';
+			};
+				
+		var endpoint = require('../lib/support/ws_endpoint');
+			
+		endpoint.callService(zenithMessage, option, function(err,message){		
+			if(!err){
+				
+				callback(null, message);	
+			} else {
+				//send error message for error situation
+				//can create more detailed errors by reading fields in 'err' object
+				var errMsg = soapErrorMsg.getSOAP11Fault('Connection Refused.'); 
+				var errZenithMessage = zenithErrorMsg.getZenithErrorMSG(errMsg, 
+				                                           'text/xml', '503');
+				callback(null, errZenithMessage);
+			}		
+			});	
+}
+exports.mediate = mediate;
++-----+ 
