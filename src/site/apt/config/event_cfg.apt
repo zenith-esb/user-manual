@@ -1,0 +1,41 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+
+Zenith Configuration
+
+	Zenith ESB uses JavaScript based configuration method instead of XML based configuration mechanism. This provides user more flexibility in creating the message flow process. The configuration is done using /configuration/zenith-configuration.js file.Sample configuration files can be found in /samples directory.
+	The message flow should be created within the mediate function. This method is called by the Zenith sequence generator. 
+	
++-----+
+function mediate(message, callback){	
+	//implementation 
+}
++-----+
+
+	The parameters for the function are zenith message object and the callback function.The user can use pre coded modules to ease up the configuration. These modules are in /lib/support folder. User can import them to the code by importing the module
+
++-----+
+var module = require('../lib/support/module');
++-----+
+
+  
+Zenith Message
+
+	Zenith Message is the object that passes through the ESB. This contains the message body and the transport layer headers. Following are the fields in the Zenith Message object. The source for the Message can be found in /lib/zenith-message.js. The Zenith message object contains following fields.
+
+Callback
+
+	Callbacks are used to send the replies back to the requests. Callbacks are functions used by JavaScript for passing back the return values. It has following structure
+
++-----+
+callback(error, message)
++-----+
+
+	First argument is used to pass errors and the second argument is used to send the Zenith message object. 
+
+
