@@ -56,7 +56,8 @@
     </menu>
 	
 	<menu name="DashBoard">
-     	  <item name="Configuration Panel" href="dashboard/confpanel.html"/>
+     	  <item name="System information" href="dashboard/confpanel.html"/>
+          <item name="System configuration" href="dashboard/sysconf.html"/>
     </menu>
 	
 	<menu name="Samples catalog">
