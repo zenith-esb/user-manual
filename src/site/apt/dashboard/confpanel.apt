@@ -6,10 +6,17 @@
  Date Here
  -----
  
-Configuration panel
+System information 
 
-	GUI to configure Zenith ESB
-  
-+-----+
+	The Web based GUI can be used to monitor the system as well as to configure the ESB. The GUI can be accessed through a web
+browser by http://<hostname>:3000 . 
+	
+  In the system status tab, the system information about the running environment is displayed. User can monitor memory consumption and
+heap memory usage in realtime.
 
-+-----+
+[../images/sysinfo.jpg] Zenith system information
+
+ \
+
+[../images/statics.jpg] Zenith heap status  
+

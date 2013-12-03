@@ -1,0 +1,19 @@
+ -----
+ Zenith ESB
+ -----
+ Author Here
+ -----
+ Date Here
+ -----
+ 
+System configuration
+
+	The Web based GUI can be used to monitor the system as well as to configure the ESB. The GUI can be accessed through a web
+browser by http://<hostname>:3000 . 
+	
+  Every Zenith configuration file can be accessed and modified from this location. The information regarding each configuration can 
+be found under configuration section.
+
+[../images/conf.png] Zenith system configuration
+
+
